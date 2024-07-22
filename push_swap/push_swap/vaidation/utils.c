@@ -41,3 +41,16 @@ int consists_of(char *str, char* syntax)
     }
     return (1);
 }
+int is_valid_number(const char *str) 
+{
+    if (*str == '+' || *str == '-') {
+        str++;
+    }
+    while (*str) {
+        if (!isdigit(*str)) {
+            return 0; 
+        }
+        str++;
+    }
+    return 1; 
+}
