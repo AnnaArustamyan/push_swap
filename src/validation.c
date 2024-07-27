@@ -76,7 +76,7 @@ int meets_conditions(char *c, int index)
     }
     else if (*c == ' ')
     {
-        if (index > 0 && (c[-1] == '+' || c[-1] == '-' || c[-1] == ' ' || c[1] == ' '))
+        if (index > 0 && (c[-1] == '+' || c[-1] == '-'))
             return (0);
         return (1);    
     }    
