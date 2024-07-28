@@ -48,7 +48,7 @@ void print_stack(t_list *stack)
 {
 	while (stack)
 	{
-		printf("%d\n", stack -> data);
+		printf("%d representation %d\n", stack -> data, stack -> representation);
 		stack = stack -> next;
 	}
 }

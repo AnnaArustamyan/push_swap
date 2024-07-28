@@ -1,4 +1,6 @@
-int sqrt(int nb)
+#include "../includes/push_swap.h"
+
+int my_sqrt(int nb)
 {
     int i;
 
@@ -8,7 +10,7 @@ int sqrt(int nb)
     return (i);
 }
 
-int log(int nb)
+int my_log(int nb)
 {
     int i;
 

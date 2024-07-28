@@ -12,9 +12,13 @@ int	main(int ac, char **av)
 	if (!validate(av))
 		exit_error(NULL, NULL);
 	stack_a = stack_init(ac, av);
-	printf("hey");
+	print_stack(stack_a);
+
+	assign_indexes(&stack_a, create_sort_fill_arr(&stack_a));
+	print_stack(stack_a);
 	//push_swap(&stack_a, &stack_b, stack_size);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
+	system("leaks push_swap");
 	return (0);
 }

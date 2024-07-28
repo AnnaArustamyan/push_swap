@@ -5,7 +5,7 @@ int* create_sort_fill_arr (t_list **stack_a)
     int *arr;
     int size;
     int i;
-    t_list p;
+    t_list *p;
 
     size = stack_size(*stack_a);
     arr = (int *)malloc(sizeof(int) * size);
@@ -17,6 +17,7 @@ int* create_sort_fill_arr (t_list **stack_a)
     {
         arr[i] = p->data;
         p = p->next;
+        i++;
     }
     bubble_sort(arr, size);
     return (arr);
@@ -24,7 +25,7 @@ int* create_sort_fill_arr (t_list **stack_a)
 
 void assign_indexes(t_list **stack_a, int *arr)
 {
-    t_list p;
+    t_list *p;
     int i;
     int size;
 
@@ -34,7 +35,7 @@ void assign_indexes(t_list **stack_a, int *arr)
     while (p)
     {
         i = 0;
-        while (arr[i] < size)
+        while (i < size)
         {
             if (p->data == arr[i])
             {
@@ -45,4 +46,10 @@ void assign_indexes(t_list **stack_a, int *arr)
         }
         p = p->next;
     }
+}
+
+void butterfly_sort(t_list stack_a, t_list stack_b, int stack_size)
+{
+
+
 }

@@ -1,3 +1,5 @@
+#include "../includes/push_swap.h"
+
 int is_sorted(t_list **stack)
 {
     while((*stack) -> next)

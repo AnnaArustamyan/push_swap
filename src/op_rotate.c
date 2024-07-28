@@ -27,7 +27,7 @@ void rb(t_list **stack_b, int flag)
         write(1, "rb\n", 3);
 }
 
-void ra(t_list **stack_a, t_list **stack_b, int flag)
+void rr(t_list **stack_a, t_list **stack_b, int flag)
 {
     op_rotate(stack_a);
     op_rotate(stack_b);
