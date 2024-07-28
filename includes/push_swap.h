@@ -10,7 +10,7 @@
 typedef struct s_list
 {
     int data;
-    int representation;
+    int rep;
     struct s_list *next;
 }                   t_list;
 
@@ -25,7 +25,7 @@ int         stack_size(t_list *lst);
 int         consists_of(char *str, char* syntax);
 int         check_syntax(char **str);
 int         validate_grammar(char **str);
-int         meets_conditions(char *c, int representation);
+int         meets_conditions(char *c, int rep);
 
 void        exit_error(t_list **stack_a, t_list **stack_b);
 long int    ft_atoi(const char *str);
@@ -61,5 +61,15 @@ void assign_indexes(t_list **stack_a, int *arr);
 int my_sqrt(int nb);
 int my_log(int nb);
 
+int min_idx(t_list **stack_a);
+int max_idx(t_list **stack_a);
+t_list  *min_node(t_list **stack_a, int *min_idx);
+t_list *max_node(t_list **stack_a, int *max_idx);
+void get_element_to_top(t_list **stack_a, int idx, int value);
+
+
+void sort_three(t_list **stack_a);
+void sort_four(t_list **stack_a, t_list **stack_b);
+void sort_five(t_list **stack_a, t_list **stack_b);
 
 #endif 

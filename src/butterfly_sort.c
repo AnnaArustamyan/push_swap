@@ -39,7 +39,7 @@ void assign_indexes(t_list **stack_a, int *arr)
         {
             if (p->data == arr[i])
             {
-                p->index = i;
+                p->rep = i;
                 break;
             }
             i++;

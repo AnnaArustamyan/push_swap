@@ -10,6 +10,9 @@ void op_swap(t_list **stack)
         temp = (*stack)->data;
         (*stack)->data = (*stack)->next->data;
         (*stack)->next->data = temp;
+        temp = (*stack)->rep;
+        (*stack)->rep = (*stack)->next->rep;
+        (*stack)->next->rep = temp;
     }
 }
 

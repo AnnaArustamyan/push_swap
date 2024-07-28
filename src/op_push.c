@@ -18,9 +18,11 @@ void pa(t_list **stack_a, t_list **stack_b, int flag)
         write(1, "pa\n", 3);
 }
 
-void pb(t_list **stack_b, t_list** stack_a, int flag)
+void pb(t_list **stack_a, t_list** stack_b, int flag)
 {
     op_push(stack_b, stack_a);
     if(flag)
         write(1, "pb\n", 3);
 }
+
+

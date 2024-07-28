@@ -36,9 +36,9 @@ void fill_stack_values(char *str, t_list **stack_a)
 		if(len > 0)
 		{
 			if(len > 11)
-				return ;
+				exit_error(stack_a, NULL); 
 			else if(ft_atoi(p) > 2147483647 || ft_atoi(p) < (-2147483648))
-				return ;
+				exit_error(stack_a, NULL);
 			else
 			{
 				nbr = ft_atoi(p);
