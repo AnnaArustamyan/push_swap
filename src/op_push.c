@@ -1,3 +1,5 @@
+#include "../includes/push_swap.h"
+
 void op_push(t_list **stack_a, t_list **stack_b)
 {
      if (stack_b && (*stack_b))

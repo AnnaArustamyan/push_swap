@@ -1,3 +1,5 @@
+#include "../includes/push_swap.h"
+
 void op_rotate(t_list **stack)
 {
     if (*stack != NULL || stack != NULL)

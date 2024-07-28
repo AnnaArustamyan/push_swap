@@ -30,3 +30,25 @@ t_list	*ft_lstnew(int content)
 	head->next = NULL;
 	return (head);
 }
+
+int stack_size(t_list *lst)
+{
+	int i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst -> next;
+		i++;
+	}
+	return (i);
+}
+
+void print_stack(t_list *stack)
+{
+	while (stack)
+	{
+		printf("%d\n", stack -> data);
+		stack = stack -> next;
+	}
+}

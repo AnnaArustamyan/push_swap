@@ -1,3 +1,5 @@
+#include "../includes/push_swap.h"
+
 void op_swap(t_list **stack)
 {
     int temp;

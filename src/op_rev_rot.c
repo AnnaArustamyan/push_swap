@@ -1,3 +1,5 @@
+#include "../includes/push_swap.h"
+
 void op_rev_rot(t_list **stack)
 {
     if (stack && *stack)
