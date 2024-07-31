@@ -8,7 +8,6 @@ void create_sort_arr_assign_rep (t_list **stack_a)
     t_list *p;
 
     size = stack_size(*stack_a);
-    printf("size: %d\n", size);
     arr = (int *)malloc(sizeof(int) * size);
     if (!arr)
         return ;

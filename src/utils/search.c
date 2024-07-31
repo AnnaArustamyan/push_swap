@@ -1,4 +1,4 @@
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 t_list  *min_node(t_list **stack_a, int *min_idx)
 {

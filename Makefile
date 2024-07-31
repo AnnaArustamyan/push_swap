@@ -15,8 +15,6 @@ all : $(NAME)
 $(NAME) : $(OBJS) $(DEPS)
 	$(CC) $(FLAGS) $(OBJS) -fsanitize=address -o push_swap
 
-# push_swap.o: push_swap.c
-#     gcc -c push_swap.c -o push_swap.o
 %.o:%.c
 	$(CC) $(FLAGS) -c $< -o $@
 
