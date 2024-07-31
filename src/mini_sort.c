@@ -12,6 +12,7 @@ void sort_three(t_list **stack_a)
     t_list *max;
 
     max = max_node(stack_a, &max_idx);
+    (void)max;
     if(max_idx == 0)
     {
         ra(stack_a, 1);
@@ -37,7 +38,7 @@ void sort_four(t_list **stack_a, t_list **stack_b)
     t_list  *min_ptr;
     
     min_ptr = min_node(stack_a, &min_idx);
-    get_element_to_top(stack_a, min_idx, min_ptr -> rep);
+    get_element_to_top(stack_a, min_idx, min_ptr -> rep, 1);
     pb(stack_a, stack_b, 1);
     sort_three(stack_a);
     pa(stack_a, stack_b, 1);
@@ -49,7 +50,7 @@ void sort_five(t_list **stack_a, t_list **stack_b)
     t_list  *min_ptr;
     
     min_ptr = min_node(stack_a, &min_idx);
-    get_element_to_top(stack_a, min_idx, min_ptr -> rep);
+    get_element_to_top(stack_a, min_idx, min_ptr -> rep, 1);
     pb(stack_a, stack_b, 1);
     sort_four(stack_a, stack_b);
     pa(stack_a, stack_b, 1);

@@ -5,6 +5,8 @@ t_list	*stack_init(int ac, char **av)
 	t_list		*stack_a;
 	int			i;
 
+	if (!validate(av))
+		exit_error(NULL, NULL);
 	stack_a = NULL;
 	i = 1;
 	while (i < ac)

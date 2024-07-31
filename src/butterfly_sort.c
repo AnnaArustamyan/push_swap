@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-int* create_sort_fill_arr (t_list **stack_a)
+void create_sort_arr_assign_rep (t_list **stack_a)
 {
     int *arr;
     int size;
@@ -8,9 +8,10 @@ int* create_sort_fill_arr (t_list **stack_a)
     t_list *p;
 
     size = stack_size(*stack_a);
+    printf("size: %d\n", size);
     arr = (int *)malloc(sizeof(int) * size);
     if (!arr)
-        return NULL;
+        return ;
     p = *stack_a;
     i = 0;
     while (p)
@@ -20,10 +21,11 @@ int* create_sort_fill_arr (t_list **stack_a)
         i++;
     }
     bubble_sort(arr, size);
-    return (arr);
+    assign_rep(stack_a, arr);
+    free(arr);
 }
 
-void assign_indexes(t_list **stack_a, int *arr)
+void assign_rep(t_list **stack_a, int *arr)
 {
     t_list *p;
     int i;
@@ -48,8 +50,38 @@ void assign_indexes(t_list **stack_a, int *arr)
     }
 }
 
-void butterfly_sort(t_list stack_a, t_list stack_b, int stack_size)
+void butterfly_sort(t_list **stack_a, t_list **stack_b, int len)
 {
+    int n;
+    int i;
+    
+    n = my_sqrt(len)+ my_log(len);
+    i = 0; 
+    while(stack_size(*stack_a) > 0 && i < len)
+    {
+        if((*stack_a) -> rep <= i)
+        {
+            pb(stack_a, stack_b, 1);
+            rb(stack_b, 1);
+            i++;
+        }
+        else if((*stack_a) -> rep <= i + n)
+        {
+            pb(stack_a, stack_b, 1);
+            i++;
+        }
+        else
+            ra(stack_a, 1);
+        if (n + i >= len)
+		    i--;
+    }
+    while(stack_size(*stack_b) > 0)
+    {
+        int max_idx;
+        t_list *max;
 
-
+        max = max_node(stack_b, &max_idx);
+        get_element_to_top(stack_b, max_idx, max->rep, 0);
+        pa(stack_a, stack_b, 1);
+    }
 }

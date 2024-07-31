@@ -2,11 +2,14 @@
 
 int is_sorted(t_list **stack)
 {
-    while((*stack) -> next)
+    t_list *tmp;
+
+    tmp = *stack;  
+    while (tmp->next)
     {
-        if((*stack) -> data > ((*stack) -> next) -> data)
+        if (tmp->rep > tmp->next->rep)
             return (0);
-        (*stack) = (*stack) -> next;
+        tmp = tmp->next;
     }
     return (1);
 }
@@ -35,16 +38,26 @@ void	bubble_sort(int	*arr, int size)
     }
 }
 
-void get_element_to_top(t_list **stack_a, int idx, int value)
+void get_element_to_top(t_list **stack_a, int idx, int value, int flag_a)
 {
     if (idx <= stack_size(*stack_a) / 2)
     {
         while ((*stack_a)->rep != value)
-            ra(stack_a, 1);
+        {
+            if(flag_a)
+                ra(stack_a, 1);
+            else
+                rb(stack_a, 1);
+        }
     }
     else
     {
         while ((*stack_a)->rep != value)
-            rra(stack_a, 1);
+        {
+            if(flag_a)
+                rra(stack_a, 1);
+            else
+                rrb(stack_a, 1);
+        }
     }
 }

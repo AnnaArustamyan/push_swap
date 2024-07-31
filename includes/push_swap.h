@@ -21,6 +21,7 @@ void        free_stack(t_list **stack);
 void        ft_lstadd_back(t_list **lst, int data);
 void        print_stack(t_list *stack);
 int         stack_size(t_list *lst);
+int         is_sorted(t_list **stack);
 
 int         consists_of(char *str, char* syntax);
 int         check_syntax(char **str);
@@ -54,22 +55,24 @@ void ra(t_list **stack_a, int flag);
 void rb(t_list **stack_b, int flag);
 void rr(t_list **stack_a, t_list **stack_b, int flag);
 
-int *create_sort_fill_arr (t_list **stack_a);
+void create_sort_arr_assign_rep (t_list **stack_a);
 void print_stack(t_list *stack);
-void assign_indexes(t_list **stack_a, int *arr);
+void assign_rep(t_list **stack_a, int *arr);
 
 int my_sqrt(int nb);
 int my_log(int nb);
 
-int min_idx(t_list **stack_a);
-int max_idx(t_list **stack_a);
 t_list  *min_node(t_list **stack_a, int *min_idx);
 t_list *max_node(t_list **stack_a, int *max_idx);
-void get_element_to_top(t_list **stack_a, int idx, int value);
+void get_element_to_top(t_list **stack_a, int idx, int value, int flag_a);
 
-
+void sort_two(t_list **stack_a);
 void sort_three(t_list **stack_a);
 void sort_four(t_list **stack_a, t_list **stack_b);
 void sort_five(t_list **stack_a, t_list **stack_b);
+
+void butterfly_sort(t_list **stack_a, t_list **stack_b, int len);
+void push_swap( t_list **stack_a, t_list **stack_b);
+
 
 #endif 
