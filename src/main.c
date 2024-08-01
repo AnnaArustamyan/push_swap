@@ -20,7 +20,10 @@ int	main(int ac, char **av)
 
 	// butterfly_sort(&stack_a, &stack_b, size);
 	// print_stack(stack_a);
+
 	push_swap(&stack_a, &stack_b);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	system("leaks push_swap");
 	return (0);
 }

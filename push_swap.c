@@ -21,7 +21,5 @@ void push_swap( t_list **stack_a, t_list **stack_b)
         sort_five(stack_a, stack_b);
     else if (size > 5)  
         butterfly_sort(stack_a, stack_b, size);
-    //print_stack(*stack_a);
-    free_stack(stack_a);
-    free_stack(stack_b);
+    // print_stack(*stack_a);
 }
