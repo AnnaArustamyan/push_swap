@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aarustam < aarustam@student.42yerevan.a    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/02 18:56:06 by aarustam          #+#    #+#             */
+/*   Updated: 2024/08/02 19:11:08 by aarustam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 t_list	*stack_init(int ac, char **av)
@@ -15,45 +27,42 @@ t_list	*stack_init(int ac, char **av)
 		i++;
 	}
 	check_doubles(&stack_a);
-	return(stack_a);
+	return (stack_a);
 }
 
-void fill_stack_values(char *str, t_list **stack_a)
+void	fill_stack_values(char *str, t_list **stack_a)
 {
 	char		*p;
 	long int	nbr;
-	int 		len;
+	int			len;
 
-	while(*str)
+	while (*str)
 	{
 		while (*str == ' ')
 			str++;
 		p = str;
 		len = 0;
-		while(*str && *str != ' ')
+		while (*str == '0' && str[1] == '0')
+			str++;
+		while (*str && *str != ' ')
 		{
 			len++;
 			str++;
 		}
-		if(len > 0)
+		if (len > 0)
 		{
-			if(len > 11)
-				exit_error(stack_a, NULL); 
-			else if(ft_atoi(p) > 2147483647 || ft_atoi(p) < (-2147483648))
+			nbr = ft_atoi(p);
+			if (len > 11 || nbr > 2147483647 || nbr < -2147483648)
 				exit_error(stack_a, NULL);
-			else
-			{
-				nbr = ft_atoi(p);
-				ft_lstadd_back(stack_a, (int)nbr);
-			}
+			ft_lstadd_back(stack_a, (int)nbr);
 		}
 	}
 }
 
-void check_doubles(t_list **stack_a)
+void	check_doubles(t_list **stack_a)
 {
-	t_list *current;
-	t_list *tmp;
+	t_list	*current;
+	t_list	*tmp;
 
 	if (!stack_a || !(*stack_a))
 		exit_error(stack_a, NULL);

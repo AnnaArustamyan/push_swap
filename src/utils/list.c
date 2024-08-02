@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   list.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aarustam < aarustam@student.42yerevan.a    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/02 19:16:41 by aarustam          #+#    #+#             */
+/*   Updated: 2024/08/02 19:17:04 by aarustam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
 void	ft_lstadd_back(t_list **lst, int data)
@@ -31,9 +43,9 @@ t_list	*ft_lstnew(int content)
 	return (head);
 }
 
-int stack_size(t_list *lst)
+int	stack_size(t_list *lst)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (lst)
@@ -44,7 +56,7 @@ int stack_size(t_list *lst)
 	return (i);
 }
 
-void print_stack(t_list *stack)
+void	print_stack(t_list *stack)
 {
 	while (stack)
 	{
